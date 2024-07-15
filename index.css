@@ -1,3 +1,5 @@
+/* index.css */
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -8,9 +10,9 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #f8f8f8;
+    background-color: #333;
+    color: white;
     padding: 10px 20px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .logo {
@@ -24,18 +26,20 @@ header {
 }
 
 nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
     display: flex;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
     gap: 20px;
 }
 
-nav a {
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    color: white;
     text-decoration: none;
-    color: #333;
-    font-weight: bold;
-    cursor: pointer;
 }
 
 .search {
@@ -43,44 +47,94 @@ nav a {
     align-items: center;
 }
 
-.search input {
+.search input[type="text"] {
     padding: 5px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+    margin-right: 10px;
 }
 
 .search button {
-    background: none;
-    border: none;
-    cursor: pointer;
-    font-size: 1.2em;
+    padding: 5px 10px;
+}
+
+main {
+    padding: 20px;
 }
 
 .section {
-    padding: 20px;
-    text-align: center;
+    display: none;
+}
+
+.section.active {
+    display: block;
 }
 
 .img1, .img2, .img3 {
-    display: flex;
-    justify-content: center;
-    margin: 20px 0;
+    margin-top: 20px;
+    text-align: center;
 }
 
 .img1 img, .img2 img, .img3 img {
-    width: 100%;
-    max-width: 1000px;
+    width: 80%;
     height: auto;
     border-radius: 10px;
 }
 
-.video {
-    margin-bottom: 20px;
+.img-container img {
+    width: 100%;
+    max-width: 600px; /* Limitar el tamaño máximo de las imágenes */
+    height: auto;
+    margin: 10px 0; /* Espacio entre las imágenes */
+    border-radius: 10px;
 }
 
 .video img {
     width: 100%;
-    max-width: 600px;
+    height: auto;
+    border-radius: 10px;
+}
+.video a {
+    font-size: 30px; /* Tamaño de letra base para los enlaces de los videos */
+    text-decoration: none;
+    color: #333;
+    display: block;
+    margin-bottom: 10px;
+}
+
+
+@media (max-width: 375px) {
+    header {
+        padding: 10px;
+    }
+
+    .logo img {
+        height: 40px;
+        margin-right: 5px;
+    }
+
+    nav ul {
+        gap: 5px;
+    }
+
+    .img1 img, .img2 img, .img3 img {
+        max-width: 100%;
+    }
+
+    .video img {
+        max-width: 100%;
+    }
+}
+
+/* Estilo adicional para las imágenes en la sección de información */
+.info-img {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.info-img img {
+    width: 45%;
     height: auto;
     border-radius: 10px;
 }
