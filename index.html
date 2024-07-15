@@ -31,7 +31,7 @@
     <main>
         <section id="inicio" class="section active">
             <h2>Bienvenidos a Bienes Raices G.S</h2>
-            <h1>En Bienes Raices G.S nos dedicamos a ofrecerte las mejores propiedades y asesoramiento para la compra, venta, y alquiler de bienes raíces. Nuestro equipo de expertos está aquí para ayudarte a encontrar el hogar de tus sueños o la inversión perfecta. Navega por nuestro sitio para conocer más sobre nuestros servicios y las propiedades disponibles. ¡Gracias por visitarnos!</h1>
+            <p>En Bienes Raices G.S nos dedicamos a ofrecerte las mejores propiedades y asesoramiento para la compra, venta, y alquiler de bienes raíces. Nuestro equipo de expertos está aquí para ayudarte a encontrar el hogar de tus sueños o la inversión perfecta. Navega por nuestro sitio para conocer más sobre nuestros servicios y las propiedades disponibles. ¡Gracias por visitarnos!</h1>
             <div class="img-container">
                 <img src="https://scontent.fgua3-3.fna.fbcdn.net/v/t39.30808-6/449777644_781418544187372_3884178507256564730_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=833d8c&_nc_ohc=yofKkGFSOjoQ7kNvgF9gENY&_nc_ht=scontent.fgua3-3.fna&oh=00_AYCefwX_4zNd2Ym2USDRDmwihpvWJzlf_Y--XtRozNNi2w&oe=66990BB8" alt="Imagen de propiedad 1">
             </div>
@@ -74,13 +74,13 @@
     <script>
         function showSection(sectionId) {
             document.querySelectorAll('.section').forEach(section => {
-                section.classList.remove('active');
+                if (section.id === sectionId) {
+                    section.classList.add('active');
+                } else {
+                    section.classList.remove('active');
+                }
             });
-            document.getElementById(sectionId).classList.add('active');
         }
-
-        // Mostrar la sección de inicio por defecto
-        showSection('inicio');
     </script>
 </body>
 </html>
